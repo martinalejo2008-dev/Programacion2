@@ -1,13 +1,18 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Objetos creados al inicio: " + Dispositivo.getTotalCreados());
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+        Dispositivo d1 = new Dispositivo("Servidor", "Infraestructura");
+        System.out.println("Objetos creados tras d1: " + Dispositivo.getTotalCreados());
+
+        Dispositivo d2 = new Dispositivo("Router", "Redes");
+        Dispositivo d3 = new Dispositivo("Monitor", "Periférico");
+
+        System.out.println("Total final de objetos creados: " + Dispositivo.getTotalCreados());
+
+        System.out.println("\n--- Lista de Dispositivos ---");
+        System.out.println("Objeto 1 -> ID: " + d1.getId() + " | Nombre: " + d1.getNombre());
+        System.out.println("Objeto 2 -> ID: " + d2.getId() + " | Nombre: " + d2.getNombre());
+        System.out.println("Objeto 3 -> ID: " + d3.getId() + " | Nombre: " + d3.getNombre());
     }
 }
